@@ -2,6 +2,12 @@ package net.htlgkr.mittermayrm180114.beispiel1;
 
 public class EratosthenesPrimeSieve implements PrimeSieve
 {
+    int upperLimit;
+    public EratosthenesPrimeSieve(int upperLimit)
+    {
+        this.upperLimit = upperLimit;
+    }
+
     @Override
     public boolean isPrime(int p)
     {
@@ -26,6 +32,16 @@ public class EratosthenesPrimeSieve implements PrimeSieve
     @Override
     public void printPrimes()
     {
+        boolean isPrime = true;
 
+        for(int i = 0; i < upperLimit; i++)
+        {
+            isPrime = isPrime(i);
+
+            if(isPrime == true)
+            {
+                System.out.println(i);
+            }
+        }
     }
 }
